@@ -53,7 +53,7 @@ class ListBooks extends React.Component {
         }
         if (removeFromShelf) {
             const index = removeFromShelf.findIndex(element => element.id === book.id)
-            removeFromShelf.splice(index)
+            removeFromShelf.splice(index, 1)
             book.shelf = shelf
             switch (shelf) {
             case 'currentlyReading':
@@ -87,7 +87,7 @@ class ListBooks extends React.Component {
                 </div>
                 </div>
                 <div className="open-search">
-                <button onClick={() => this.setState({ showSearchPage: true })}>Add a book</button>
+                <button onClick={this.props.onSearchBook}>Add a book</button>
                 </div>
             </div>
         )
