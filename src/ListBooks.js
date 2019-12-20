@@ -77,17 +77,17 @@ class ListBooks extends React.Component {
         return (
             <div className="list-books">
                 <div className="list-books-title">
-                <h1>MyReads</h1>
+                    <h1>MyReads</h1>
                 </div>
                 <div className="list-books-content">
-                <div>
-                    <Shelf title="Currently Reading" books={currentlyReading} onBookChanged={this.onBookChanged}/>
-                    <Shelf title="Want to Read" books={wantToRead} onBookChanged={this.onBookChanged}/>
-                    <Shelf title="Read" books={read} onBookChanged={this.onBookChanged}/>
-                </div>
+                    <div>
+                        <Shelf title="Currently Reading" books={currentlyReading} onBookChanged={this.onBookChanged}/>
+                        <Shelf title="Want to Read" books={wantToRead} onBookChanged={this.onBookChanged}/>
+                        <Shelf title="Read" books={read} onBookChanged={this.onBookChanged}/>
+                    </div>
                 </div>
                 <div className="open-search">
-                <button onClick={this.props.onSearchBook}>Add a book</button>
+                    <button onClick={this.props.onSearchBook}>Add a book</button>
                 </div>
             </div>
         )

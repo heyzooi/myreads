@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 import ListBooks from './ListBooks'
 import SearchBook from './SearchBook'
+import Book from './Book'
 import { Switch, Route } from 'react-router-dom'
 import queryString from 'query-string'
 
@@ -10,6 +11,15 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
         <Switch>
+          <Route exact path="/book/:id" render={({ history, match }) => {
+            const { id } = match.params
+            return (
+              <div>
+                <button className="close-search" onClick={() => history.goBack()}>Close</button>
+                <Book bookId={id}/>
+              </div>
+            )
+          }}/>
           <Route exact path="/search" render={({ history, location }) => {
             const { q } = queryString.parse(location.search)
             return (
